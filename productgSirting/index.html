@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Image Zoom</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.product-image-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.zoom-area {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#img {
+  width: 100%;
+  height: 100%; 
+  cursor: zoom-in;
+  transition: transform 1s ease ;
+}
+
+  </style>
+</head>
+<body>
+  <div class="product-image-container">
+    <div class="zoom-area">
+      <img src="logo.jpg" alt="Product" id="img">
+    </div>
+  </div> 
+
+  <script >
+//     const productImage = document.getElementById('product-image');
+
+//   productImage.addEventListener('mousemove', (e) => {
+//     const zoomLevel = 2; // Adjust zoom level
+//     const width = productImage.offsetWidth;
+//     const height = productImage.offsetHeight;
+  
+//      // Get mouse position relative to image
+//      const x = (e.offsetX / width) * 100;
+//       const y = (e.offsetY / height) * 100;
+
+//       // Apply CSS transform to zoom the image
+//       productImage.style.transformOrigin = `${x}% ${y}%`;
+//       productImage.style.transform = `scale(${zoomLevel})`;
+// });
+
+// productImage.addEventListener('mouseleave', () => {
+//   // Reset the image zoom when the mouse leaves
+//   productImage.style.transform = 'scale(1)';
+//   productImage.style.transformOrigin = 'center center';
+
+
+
+
+// });
+
+
+// const img = document.getElementById("img");
+// img.addEventListener("mousemove",function(e){
+//     const zoomlevel = 4;
+    
+//     const imgWidth = img.offsetWidth;
+//     const imgHeight = img.offsetHeight;
+
+//     const x= (e.offsetX / imgWidth) *100;
+//     const y= (e.offsetY / imgHeight) *100;
+
+//     //Apply csss style
+//     img .style.transformOrigin  = `${x}% ${y}%`;
+//     img.style.transform =`scale(${zoomlevel})`;
+
+// })
+
+// img.addEventListener("mouseleave",function(e){
+
+//     img .style.transformOrigin  = 'center center';
+//     img.style.transform =scale(1);
+// })
+
+const img = document.getElementById("img");
+img.addEventListener("mousemove",function(e){
+  const zoomLevel = 2;
+
+  const imgWidth = img.offsetWidth;
+  const imgHeight = img.offsetHeight;
+
+  const x= (e.offsetX / imgWidth ) * 100;
+  const y= (e.offsetY / imgHeight ) * 100;
+
+  img.style.transformOrigin =`${x}% ${y}%`;
+  img.style.transform =`scale(${zoomLevel})`;
+});
+
+img.addEventListener("mouseleave",function(e){
+
+  img.transformOrigin ='center ceneter';
+  img.style.transform=scale(1);
+
+})
+
+
+
+  </script>
+</body>
+</html>
